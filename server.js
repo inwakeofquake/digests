@@ -1,4 +1,4 @@
-// Simple Express server for authentication
+
 const express = require('express');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
@@ -7,9 +7,13 @@ const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
 
-// In a real app, store this in a database
-const hashedPassword = '$2b$10$9Ys.04R4PjqRwCEER0c9Ae0eI5jD0GX.9rAFncxnY6jSBw2HfRi9m'; // hash for 'iWantToRead123'
+const hashedPassword = '$2b$10$9Ys.04R4PjqRwCEER0c9Ae0eI5jD0GX.9rAFncxnY6jSBw2HfRi9m';
+
+app.get('/', (req, res) => {
+  res.send('Сервер работает');
+});
 
 app.post('/login', async (req, res) => {
   const { password } = req.body;
@@ -22,6 +26,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Auth server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Сервер запущен по адресу http://0.0.0.0:${PORT}`);
 });
