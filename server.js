@@ -1,82 +1,30 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
-const path = require('path');
+const path = require('path'); // Don't forget to require 'path'
 const app = express();
 const PORT = 3001;
 
-// Debug middleware to log all requests
-app.use((req, res, next) => {
-  console.log('Incoming request:', {
-    method: req.method,
-    url: req.url,
-    headers: req.headers,
-    body: req.body
-  });
-  next();
-});
-
-// CORS configuration
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
-}));
-
-// Body parsing middleware
-app.use(express.json({
-  verify: (req, res, buf) => {
-    try {
-      JSON.parse(buf);
-    } catch (e) {
-      console.error('Invalid JSON:', e);
-      res.status(400).json({ error: 'Invalid JSON' });
-    }
-  }
-}));
-app.use(express.urlencoded({ extended: true }));
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-    res.status(200).json({
-        status: 'ok',
-        timestamp: new Date().toISOString(),
-        uptime: process.uptime()
-    });
-});
-
-// Serve static files from the current directory
-app.use(express.static(__dirname, {
-    index: 'login.html',
-    extensions: ['html']
-}));
+// Middleware setup (CRITICAL FIXES)
+app.use(cors());
+app.use(express.json()); // Parses JSON bodies
+app.use(express.urlencoded({ extended: true })); // Parses URL-encoded forms
+app.use(express.static(path.join(__dirname))); // Serves static files
 
 const hashedPassword = '$2b$10$9Ys.04R4PjqRwCEER0c9Ae0eI5jD0GX.9rAFncxnY6jSBw2HfRi9m';
 
 // Route handlers
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html'));
+  res.sendFile(path.join(__dirname, 'login.html')); // Fixed path
 });
 
 app.post('/login', async (req, res) => {
   try {
-    console.log('Login attempt - Raw body:', req.body);
-    console.log('Content-Type:', req.headers['content-type']);
-    
     // Add validation
-    if (!req.body) {
-      console.log('No request body received');
+    if (!req.body || !req.body.password) {
       return res.status(400).json({ 
         success: false, 
-        message: 'No request body received' 
-      });
-    }
-
-    if (!req.body.password) {
-      console.log('No password in request body');
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Введите пароль' 
+        message: 'Password is required' 
       });
     }
 
@@ -95,7 +43,7 @@ app.post('/login', async (req, res) => {
     console.error('Login error:', err);
     res.status(500).json({ 
       success: false, 
-      message: 'Ошибка сервера' 
+      message: 'Server error' 
     });
   }
 });
