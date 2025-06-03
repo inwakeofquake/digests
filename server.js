@@ -12,7 +12,7 @@ app.use(express.static(__dirname));
 const hashedPassword = '$2b$10$9Ys.04R4PjqRwCEER0c9Ae0eI5jD0GX.9rAFncxnY6jSBw2HfRi9m';
 
 app.get('/', (req, res) => {
-  res.send('Сервер работает');
+  res.sendFile(path.join(__dirname, '~/login.html'));  // Adjust path
 });
 
 app.post('/login', async (req, res) => {
