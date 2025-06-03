@@ -5,7 +5,22 @@
   <title>Analytical Papers Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    .paper-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: center;
+    }
+    .paper-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    .paper-card img {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .paper-card:hover img {
+      transform: scale(1.02);
+    }
+  </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center">
   <script>
@@ -15,49 +30,61 @@
   </script>
 
   <nav class="w-full flex justify-end p-4">
-    <button onclick="logout()" class="text-gray-500 hover:text-gray-800 underline text-sm">Logout</button>
+    <button onclick="logout()" class="text-gray-500 hover:text-gray-800 underline text-sm">Выйти</button>
   </nav>
   
   <h1 class="text-2xl font-bold my-8">Аналитические дайджесты</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl px-4">
     <!-- Paper Card 1 -->
-    <a href="pdfs/bahrain_industry.pdf" target="_blank" class="group block">
-      <div class="overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 group-hover:scale-105">
+    <a href="pdfs/bahrain_industry.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
         <img src="covers/bahrain_industry.jpg" alt="Paper 1 Cover" class="w-full h-[370px] object-cover object-top">
       </div>
-      <div class="mt-2 text-center font-medium">Выпуск №1: Бахрейн</div>
+      <div class="p-4 text-center font-medium">Выпуск №1: Бахрейн</div>
     </a>
     <!-- Paper Card 2 -->
-    <a href="pdfs/saudi_mining.pdf" target="_blank" class="group block">
-      <div class="overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 group-hover:scale-105">
+    <a href="pdfs/saudi_mining.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
         <img src="covers/saudi_mining.jpg" alt="Paper 2 Cover" class="w-full h-[370px] object-cover object-top">
       </div>
-      <div class="mt-2 text-center font-medium">Выпуск №2: Саудовская Аравия</div>
+      <div class="p-4 text-center font-medium">Выпуск №2: Саудовская Аравия</div>
     </a>
     <!-- Paper Card 3 -->
-    <a href="pdfs/yemen.pdf" target="_blank" class="group block">
-        <div class="overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 group-hover:scale-105">
-          <img src="covers/yemen.jpg" alt="Paper 3 Cover" class="w-full h-[370px] object-cover object-top">
-        </div>
-        <div class="mt-2 text-center font-medium">Выпуск №3: Йеменские хуситы</div>
-      </a>
+    <a href="pdfs/yemen.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
+        <img src="covers/yemen.jpg" alt="Paper 3 Cover" class="w-full h-[370px] object-cover object-top">
+      </div>
+      <div class="p-4 text-center font-medium">Выпуск №3: Йеменские хуситы</div>
+    </a>
     <!-- Paper Card 4 -->
-    <a href="pdfs/shandong.pdf" target="_blank" class="group block">
-        <div class="overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 group-hover:scale-105">
-          <img src="covers/shandong.jpg" alt="Paper 4 Cover" class="w-full h-[370px] object-cover object-top">
-        </div>
-        <div class="mt-2 text-center font-medium">Выпуск №4: Шаньдун</div>
-      </a>
+    <a href="pdfs/shandong.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
+        <img src="covers/shandong.jpg" alt="Paper 4 Cover" class="w-full h-[370px] object-cover object-top">
+      </div>
+      <div class="p-4 text-center font-medium">Выпуск №4: Шаньдун</div>
+    </a>
     <!-- Paper Card 5 -->
-    <a href="pdfs/china_copper.pdf" target="_blank" class="group block">
-        <div class="overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 group-hover:scale-105">
-          <img src="covers/china_copper.jpg" alt="Paper 5 Cover" class="w-full h-[370px] object-cover object-top">
-        </div>
-        <div class="mt-2 text-center font-medium">Выпуск №5: медная промышленность Китая</div>
-      </a>  
-  
-    </div>
-
+    <a href="pdfs/china_copper.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
+        <img src="covers/china_copper.jpg" alt="Paper 5 Cover" class="w-full h-[370px] object-cover object-top">
+      </div>
+      <div class="p-4 text-center font-medium">Выпуск №5: медная промышленность Китая</div>
+    </a>
+    <!-- Paper Card 6 -->
+    <a href="pdfs/fujian.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
+        <img src="covers/fujian.jpg" alt="Paper 6 Cover" class="w-full h-[370px] object-cover object-top">
+      </div>
+      <div class="p-4 text-center font-medium">Выпуск №6: провинция Фуцзянь</div>
+    </a>
+    <!-- Paper Card 7 -->
+    <a href="pdfs/XXXXX.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
+      <div class="overflow-hidden">
+        <img src="covers/XXXXX.jpg" alt="Paper 7 Cover" class="w-full h-[370px] object-cover object-top">
+      </div>
+      <div class="p-4 text-center font-medium">Выпуск №7: логистика Марокко</div>
+    </a>
+  </div>
   <footer class="mt-16 mb-4 text-gray-500 text-xs">© 2025 Норникель</footer>
 
   <script>
