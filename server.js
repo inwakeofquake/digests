@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
+  console.log('Login attempt received');
+  console.log('HEADERS:', req.headers);
+  console.log('BODY:', req.body);
   try {
     // Add validation
     if (!req.body || !req.body.password) {
