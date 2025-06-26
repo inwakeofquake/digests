@@ -24,7 +24,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center">
   <script>
-    if (!localStorage.getItem('loggedIn')) {
+    if (localStorage.getItem('loggedIn') !== 'true') {
       window.location.href = 'login.html';
     }
   </script>
