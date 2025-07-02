@@ -4,16 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "echo 'This is a static project. Use any static file server to serve the files.'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
