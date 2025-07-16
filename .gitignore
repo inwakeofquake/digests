@@ -21,6 +21,7 @@ Thumbs.db
 logs/
 *.log
 npm-debug.log*
+change_log.txt
 
 # Runtime data
 pids
@@ -39,3 +40,6 @@ coverage
 .vscode/
 *.swp
 *.swo 
+
+ecosystem.config.js
+package.json

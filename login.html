@@ -2,41 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login | Papers Archive</title>
+  <title>Papers Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <form id="loginForm" class="bg-white px-8 py-8 rounded-2xl shadow-2xl flex flex-col gap-10 max-w-[420px] min-w-[210px] mx-4">
-    <h2 class="text-2xl font-bold mb-4 text-center">Коллекция дайджестов</h2>
-    <input type="password" id="password" placeholder="Пароль" class="border border-gray-300 p-5 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-    <button type="submit" class="bg-blue-600 text-white rounded-xl w-60 mx-auto py-4 text-xl font-semibold hover:bg-blue-700 transition">Вперед!</button>
-    <div id="errorMsg" class="text-red-600 text-lg text-center"></div>
-  </form>
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const password = document.getElementById('password').value;
-      const errorMsg = document.getElementById('errorMsg');
-      errorMsg.textContent = '';
-      try {
-        const response = await fetch('/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ password })
-        });
-        if (response.ok) {
-          localStorage.setItem('loggedIn', 'true');
-          window.location.href = "index.html";
-        } else {
-          const data = await response.json();
-          errorMsg.textContent = data.message || 'Ошибка входа.';
-        }
-      } catch (err) {
-        errorMsg.textContent = 'Сервер не отвечает. Пожалуйста, попробуйте позже.';
-      }
-    });
-  </script>
+  <div class="bg-white px-8 py-8 rounded-2xl shadow-2xl flex flex-col gap-6 max-w-[420px] min-w-[210px] mx-4 text-center">
+    <h2 class="text-2xl font-bold mb-4">Доступ к этому сайту закрыт</h2>
+    <p class="text-lg text-gray-700">Это закрытый архив аналитических документов.<br>Чтобы получить доступ, обратитесь, пожалуйста, в Департамент общественных связей.</p>
+  </div>
 </body>
 </html>
