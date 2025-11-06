@@ -2,58 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Analytical Papers Archive</title>
+  <title>Nornickel Reader Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .paper-card {
+    .card {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transform-origin: center;
     }
-    .paper-card:hover {
+    .card:hover {
       transform: scale(1.05);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
-    .paper-card img {
+    .card img {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .paper-card:hover img {
+    .card:hover img {
       transform: scale(1.02);
     }
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center">
-  <h1 class="text-2xl font-bold my-8">Аналитические дайджесты</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl px-4">
-    <!-- Paper Card 1 -->
-    <a href="pdfs/bahrain_industry.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/bahrain_industry.jpg" alt="Paper 1 Cover" class="w-full h-[420px] object-cover object-top">
-    </a>
-    <!-- Paper Card 2 -->
-    <a href="/pdfs/saudi_mining.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/saudi_mining.jpg" alt="Paper 2 Cover" class="w-full h-[420px] object-cover object-top">
-    </a>
-    <!-- Paper Card 3 -->
-    <a href="/pdfs/yemen.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/yemen.jpg" alt="Paper 3 Cover" class="w-full h-[420px] object-cover object-top">
-      </a>
-    <!-- Paper Card 4 -->
-    <a href="/pdfs/shandong.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/shandong.jpg" alt="Paper 4 Cover" class="w-full h-[420px] object-cover object-top">
-      </a>
-    <!-- Paper Card 5 -->
-    <a href="/pdfs/china_copper.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/china_copper.jpg" alt="Paper 5 Cover" class="w-full h-[420px] object-cover object-top">
-      </a>  
-      <!-- Paper Card 6 -->
-    <a href="/pdfs/fujian.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/fujian.jpg" alt="Paper 6 Cover" class="w-full h-[420px] object-cover object-top">
-    </a>
-      <!-- Paper Card 7 -->
-    <a href="/pdfs/morocco.pdf" target="_blank" class="paper-card block bg-white rounded-lg overflow-hidden">
-      <img src="covers/morocco.jpg" alt="Paper 7 Cover" class="w-full h-[420px] object-cover object-top">
-      </a>  
+  <h1 class="text-3xl font-bold my-8">Библиотека департамента общественных связей</h1>
+  
+  <!-- Bento Grid Layout -->
+  <div class="w-full max-w-6xl px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[600px]">
+      <!-- Large Card - Left Side -->
+      <div class="lg:col-span-2">
+        <a href="papers.html" class="card block bg-white rounded-lg overflow-hidden h-full relative">
+          <img src="" alt="Analytical Papers Collection" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h2 class="text-2xl font-bold mb-2">Аналитические материалы</h2>
+              <p class="text-lg">Коллекция аналитических материалов</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Right Side - Two Smaller Cards -->
+      <div class="lg:col-span-1 flex flex-col gap-6">
+        <!-- Top Small Card -->
+        <div class="flex-1">
+          <a href="#" class="card block bg-white rounded-lg overflow-hidden h-full relative">
+            <img src="" alt="Weekly News Collection" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+              <div class="text-center text-white">
+                <h3 class="text-lg font-bold mb-1">Недельная подборка новостей MENA и Китая</h3>
+                <p class="text-sm">MENA, Китай</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Bottom Small Card -->
+        <div class="flex-1">
+          <a href="#" class="card block bg-white rounded-lg overflow-hidden h-full relative">
+            <img src="" alt="Market Analysis" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+              <div class="text-center text-white">
+                <h3 class="text-lg font-bold mb-1">ESG дайджесты</h3>
+                <p class="text-sm">ESG</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
+  
   <footer class="mt-16 mb-4 text-gray-500 text-xs">© 2025 "Норникель"</footer>
 </body>
 </html>
